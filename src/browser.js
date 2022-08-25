@@ -1,6 +1,6 @@
 "use strict";
 
-function lox() {
+function lox(type, options) {
   let types = [
     {
       label: "INFO",
@@ -27,4 +27,17 @@ function lox() {
       color: "#ABB8C9",
     },
   ];
+
+  let styles =
+    "font-family:system-ui;font-size:4rem;-webkit-text-stroke: 1px black;font-weight:bold";
+
+  if (options.styles) {
+    styles += " " + options.styles;
+  } else {
+    styles = styles;
+  }
+
+  types.map((type) => {
+    console.log(`%c[${type.label}]`, `color:${type.color};${styles}`);
+  });
 }
