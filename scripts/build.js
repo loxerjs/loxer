@@ -9,11 +9,7 @@ require("esbuild")
     entryPoints: ["./src/browser.js"],
     bundle: false,
     banner: {
-      js: `/*
-    * v${version}
-    * Copyright (c) 2022 ${author}
-    * Licensed under the ${license} license 
-*/`,
+      js: `/* * v${version} * Copyright (c) 2022 ${author} * Licensed under the ${license} license */`,
     },
     minify: true,
     outfile: `./dist/loxer-${version}.bundle.js`,
