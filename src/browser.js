@@ -1,6 +1,7 @@
 "use strict";
 
-function lox(type, options) {
+function lox(options) {
+  // All the types.
   let types = [
     {
       label: "INFO",
@@ -28,15 +29,18 @@ function lox(type, options) {
     },
   ];
 
-  let styles =
-    "font-family:system-ui;font-size:4rem;-webkit-text-stroke: 1px black;font-weight:bold";
+  // Styles options
+  let styles;
 
-  if (options.styles) {
-    styles += " " + options.styles;
+  if (!options.styles) {
+    styles =
+      "font-family:system-ui;font-size:4rem;-webkit-text-stroke: 1px black;font-weight:bold";
+    throw new Error("Styles is empty.");
   } else {
-    styles = styles;
+    styles = options.styles;
   }
 
+  // Log the types.
   types.map((type) => {
     console.log(`%c[${type.label}]`, `color:${type.color};${styles}`);
   });
