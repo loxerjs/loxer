@@ -3,6 +3,7 @@
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
+  "type": "commonjs",
   "scripts": {
     "build": "node scripts/build.js",
     "dev": "servemon dev"
@@ -11,6 +12,10 @@
   "author": "",
   "license": "ISC",
   "devDependencies": {
-    "esbuild": "^0.15.5"
+    "esbuild": "^0.15.5",
+    "eslint": "^8.22.0"
+  },
+  "dependencies": {
+    "servemon": "0.0.1"
   }
 }

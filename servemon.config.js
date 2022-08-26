@@ -3,4 +3,6 @@ module.exports = {
   port: 2522,
   directory: "./",
   watch: true,
+  open: true,
+  fileExplore: true,
 };

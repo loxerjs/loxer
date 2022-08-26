@@ -1,4 +1,5 @@
 "use strict";
+import { generate } from "yourid";
 
 function lox(options) {
   // All the types.
@@ -31,6 +32,7 @@ function lox(options) {
 
   // Styles options
   let styles;
+  let text;
 
   if (!options.styles) {
     styles =
@@ -40,8 +42,22 @@ function lox(options) {
     styles = options.styles;
   }
 
+  // Text Options
+  if (!options.text) {
+    text = "No text";
+    throw new Error("You have not written any text.");
+  } else {
+    text = options.text;
+  }
+
   // Log the types.
   types.map((type) => {
-    console.log(`%c[${type.label}]`, `color:${type.color};${styles}`);
+    console.log(`%c[${type.label}] ${text}`, `color:${type.color};${styles}`);
   });
 }
+
+console.log(
+  generate({
+    length: 10,
+  })
+);
